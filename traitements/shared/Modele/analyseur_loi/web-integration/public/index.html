@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Legislative Impact Analyzer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>🏛️ Legislative Impact Analyzer</h1>
+        
+        <div class="input-section">
+            <div class="law-selection">
+                <label for="lawSelect">📜 Sélectionner les lois à analyser (Ctrl+clic pour sélection multiple):</label>
+                <select id="lawSelect" multiple size="6">
+                    <option value="dzd-43x1yet80db8eo/42xqkj75xfl09c/shared/database/lois/1.DIRECTIVE (UE) 20192161 DU PARLEMENT EUROPÉEN ET DU CONSEIL.html">Directive UE 2019/2161</option>
+                    <option value="dzd-43x1yet80db8eo/42xqkj75xfl09c/shared/database/lois/2.H.R.1 - One Big Beautiful Bill Act.xml">H.R.1 - One Big Beautiful Bill Act</option>
+                    <option value="dzd-43x1yet80db8eo/42xqkj75xfl09c/shared/database/lois/3.H.R.5376 - Inflation Reduction Act of 2022.xml">Inflation Reduction Act 2022</option>
+                    <option value="dzd-43x1yet80db8eo/42xqkj75xfl09c/shared/database/lois/4.REGULATION (EU) 20241689 OF THE EUROPEAN PARLIAMENT AND OF THE COUNCIL.html">Règlement UE 2024/1689</option>
+                    <option value="dzd-43x1yet80db8eo/42xqkj75xfl09c/shared/database/lois/5.中华人民共和国能源法__中国政府网.html">Loi Énergie Chine</option>
+                    <option value="dzd-43x1yet80db8eo/42xqkj75xfl09c/shared/database/lois/6.人工知能関連技術の研究開発及び活用の推進に関する法律.html">Loi IA Japon</option>
+                </select>
+                <button type="button" onclick="loadLaws()">🔄 Actualiser</button>
+            </div>
+            
+            <textarea id="userInput" placeholder="Entrez votre requête ou laissez vide pour analyse complète..."></textarea>
+            
+            <div class="button-group">
+                <button onclick="analyzeLaws()">Analyser les Lois</button>
+                <button onclick="createModel()" id="modelBtn" disabled>📊 Créer Modélisation</button>
+                <button onclick="getStatus()">Statut</button>
+            </div>
+        </div>
+
+        <div id="loader" class="loader" style="display:none;">
+            <div class="spinner"></div>
+            <div id="loadingText">⚙️ Initialisation...</div>
+            <div class="progress-bar">
+                <div id="progressFill" class="progress-fill"></div>
+            </div>
+            <div id="agentStatus" class="agent-status"></div>
+        </div>
+
+        <div id="response" class="response-section"></div>
+
+        <div class="history-section">
+            <h2>📊 Historique</h2>
+            <button onclick="loadHistory()">Charger l'historique</button>
+            <div id="historyList"></div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

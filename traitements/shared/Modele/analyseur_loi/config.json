@@ -1,0 +1,24 @@
+{
+  "s3_bucket": "csv-file-store-740fdb60",
+  "s3_base_path": "dzd-43x1yet80db8eo/42xqkj75xfl09c/shared/database/",
+  "input_sources": {
+    "10k_reports": "10k_clean.json",
+    "laws_folder": "lois/",
+    "portfolio_file": "2025-08-15_composition_sp500.csv"
+  },
+  "output_destinations": {
+    "intermediate_json": "intermediate_outputs/",
+    "final_csv": ""
+  },
+  "external_data_sources": {
+    "financial_news": ["Bloomberg", "Yahoo Finance", "GuruFocus"],
+    "consulting_reports": ["McKinsey", "BCG", "Bain"],
+    "economic_data": ["FRED", "FED FOMC"]
+  },
+  "execution_parameters": {
+    "min_impact_coefficient": 3,
+    "confidence_threshold": 0.7,
+    "max_projection_years": 10,
+    "market_cap_filter": "mid-cap and large-cap only"
+  }
+}

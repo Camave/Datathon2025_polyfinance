@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Legislative Impact Analyzer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>🏛️ Legislative Impact Analyzer</h1>
+        
+        <div class="input-section">
+            <select id="agentSelect">
+                <option value="1">Agent 1 - Portfolio Extractor</option>
+                <option value="2">Agent 2 - Sector Classifier</option>
+                <option value="3">Agent 3 - Legislative Impact Analyzer</option>
+                <option value="4">Agent 4 - Monetary Flow Modeler</option>
+                <option value="5">Agent 5 - Sector Impact Quantifier</option>
+                <option value="6">Agent 6 - Portfolio Reallocator</option>
+                <option value="full">Pipeline Complet</option>
+            </select>
+            
+            <textarea id="userInput" placeholder="Entrez votre requête ou laissez vide pour exécution standard..."></textarea>
+            
+            <div class="button-group">
+                <button onclick="invokeAgent()">Exécuter Agent</button>
+                <button onclick="getStatus()">Statut</button>
+            </div>
+        </div>
+
+        <div id="loader" class="loader" style="display:none;">
+            ⚙️ Traitement en cours...
+        </div>
+
+        <div id="response" class="response-section"></div>
+
+        <div class="history-section">
+            <h2>📊 Historique</h2>
+            <button onclick="loadHistory()">Charger l'historique</button>
+            <div id="historyList"></div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
